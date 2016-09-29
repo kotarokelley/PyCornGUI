@@ -18,9 +18,9 @@ Although the available UNICORN software works for editing chromatorgraphy traces
 ## Installation
 
 ## Dependencies
-wx
-matplotlib
-pycorn (included)
+[wx](https://wxpython.org)<br/> 
+[matplotlib](http://matplotlib.org)<br/>
+[pycorn](https://github.com/pyahmed/PyCORN) (included in this project)
 
 ## Usage
 
