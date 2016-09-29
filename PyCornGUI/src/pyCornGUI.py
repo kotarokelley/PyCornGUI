@@ -1,5 +1,11 @@
 #!/usr/bin/python
 
+'''
+pyCornGUI.py
+A GUI editor to extract and edit data from .res files generated
+by UNICORN Chromatography software supplied with AKTA Systems.
+by Kotaro Kelley 2015 kotarokelley1@gmail.com
+'''
 import glob
 import os
 import sys
@@ -2113,6 +2119,14 @@ class MainFrame(wx.Frame):
         self.MainPanel = MainPanel(self)
         
         self.Show()
+        
+def run():
+    """
+    Run GUI    
+    """
+    app = wx.App(False)
+    frame = MainFrame()
+    app.MainLoop()  
 
 if __name__ == "__main__":
     app = wx.App(False)

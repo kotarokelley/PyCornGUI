@@ -16,17 +16,17 @@ Show what the library does as concisely as possible, developers should be able t
 Although the available UNICORN software works for editing chromatorgraphy traces, I found that there were many features that were cumbersome to use. For example, aligning and overlaying multiple traces took many steps. Outputting and printing traces for use in lab meetings similarly took multiple steps and were not publication quality. PyCornGUI is a basic, no frills editor that retain and enhance the essential features of the UNICORN software. Automated processing of large number of trace files eliminates the need for tedious individual editing. 
 
 ## Installation
-
+Working on it...
 ## Dependencies
 [wx](https://wxpython.org)<br/> 
 [matplotlib](http://matplotlib.org)<br/>
 [pycorn](https://github.com/pyahmed/PyCORN) (included in this project)
 
 ## Usage
-
-from command line: python pyCornGUI.py 
-from binary app: double click on icon.
-
+from python: pyCornGUI.run()
+from command line: python pyCornGUI.py<br/>
+from binary app: double click on icon.<br/>
+[tutorial](./tutorial.md)
 
 
 ## Contributing
@@ -36,6 +36,7 @@ from binary app: double click on icon.
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
+6. Please suggest any improvements, feature requests. 
 
 
 ## Tests

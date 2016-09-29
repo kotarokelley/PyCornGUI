@@ -1,3 +1,6 @@
 *.project
 *.pydevproject
 *.DS_Store
+*pyCornGUI.pyc
+*pycorn.pyc
+/app/
