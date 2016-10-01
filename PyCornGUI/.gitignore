@@ -1,6 +1,9 @@
 *.project
 *.pydevproject
 *.DS_Store
-*pyCornGUI.pyc
-*pycorn.pyc
+/src/pyCornGUI.pyc
+/src/pycorn.pyc
 /app/
+/src/
+/pycorngui/pyCornGUI.pyc
+/pycorngui/pycorn.py
