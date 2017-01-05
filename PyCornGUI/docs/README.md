@@ -27,6 +27,7 @@ from binary app: double click on icon.<br/>
 ## Contributing
 
 1. Please suggest any improvements, feature requests. 
+2. Please notify of any bugs. 
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`

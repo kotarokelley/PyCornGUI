@@ -646,6 +646,7 @@ class PlotPanel(wx.Panel):
         
         plot_x_min, plot_x_max = None, None  # if there are non 220 traces then it will be set then. Otherwise, it will be set by 220, and so on. 
         
+
         if dispParms['show_xlabel']:
             axes.set_xlabel("Elution volume (ml)")
         if dispParms['show_ylabel']:
@@ -668,6 +669,7 @@ class PlotPanel(wx.Panel):
                 min(plot_y_min), max(plot_y_max)
             axes.set_xlim(plot_x_min, plot_x_max)
             axes.set_ylim(self.expander(plot_y_min, plot_y_max, 0.085))
+           
             counter280, counter260 = 0, 0
             for trace in inpUV_280_260:
                 for key, value in trace.items():
@@ -715,7 +717,7 @@ class PlotPanel(wx.Panel):
         if traceParms['220nm']:               # skip plot of 220 trace if not requested
             par1 = axes.twinx()     # make separate axis for displaying 220 data
             #stl = self.styles['UV3_']
-
+            stl = self.styles['UV3_']
             if dispParms['show_ylabel']:
                 par1.set_ylabel("Absorbance (mAu)", color=stl['color'])
                 
@@ -773,8 +775,8 @@ class PlotPanel(wx.Panel):
 
         if traceParms['Cond']:                 # check if Cond is requested and if it exists in the data
             par2 = axes.twinx()     # make separate axis for displaying Cond data
-            #stl = self.styles['Cond']
-            
+
+            stl = self.styles['Cond']
             if dispParms['show_ylabel']:
                 par2.set_ylabel('Cond (mS/cm)', color=stl['color'])
             par2_x_min, par2_x_max, par2_y_min, par2_y_max = zip(*[self.smartscale(trace, traceParms) for trace in inpCond]) # get scale without 220 trace
@@ -836,8 +838,7 @@ class PlotPanel(wx.Panel):
             else:
                 otherAxes = axes.twinx()
            
-            #stl = self.styles['UV_Other']
-            
+            stl = self.styles['UV_Other']
             if dispParms['show_ylabel']:
                 otherAxes.set_ylabel('Absorbance (mAu)', color=stl['color'])
                 
@@ -869,13 +870,13 @@ class PlotPanel(wx.Panel):
                         y_dat = [(i-y_dat_min)*(other_y_max-other_y_min)/(y_dat_max-y_dat_min)+other_y_min for i in y_dat]  # linear scaling of data   
                     print("Plotting: " + value['data_name'])
                     if counterOther == 0:
-                        stl = self.styles[key[:4]]
+                        stl = self.styles['UV_Other']
                         counterOther += 1
                     elif counterOther < 5:
-                        stl = self.styles[key[:4] + str(counter280)]
+                        stl = self.styles['UV_Other' + str(counterOther)]
                         counterOther += 1
                     else:
-                        stl = self.styles[key[:4]]   
+                        stl = self.styles['UV_Other']   
                         counterOther += 1
                     p1, = otherAxes.plot(x_dat, y_dat, label=value['data_name'], color=stl['color'], 
                                 ls=stl['ls'], lw=stl['lw'], alpha=stl['alpha'],linewidth = dispParms['lineThickness'])
